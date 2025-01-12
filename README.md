@@ -4,7 +4,7 @@
 
 ## Components
 
-이 프로젝트는 크게 6가지 부분으로 구성됩니다.
+이 프로젝트는 크게 7가지 부분으로 구성됩니다.
 
 1. DirectMessageServer
   - 전송될 메시지를 받는 서버입니다.
@@ -17,9 +17,12 @@
   - 전송 요청된 메시지를 대상 사용자에게 전송합니다.
 4. PushMessageChecker
   - 이미 사용자에게 전송된 메시지인지 체크하는 역할을 하는 분산 캐시 혹은 저장소입니다.
-5. MessageStorage
+5. PushTokenStore
+  - 등록된 기기의 토큰 정보를 기록합니다.
+  - 전송 시에 조회하는 역할도 동일하게 수행합니다.
+6. MessageStorage
   - 메시지를 저장하는 곳입니다.
   - cassandra, scylladb, S3, clickhouse, mongo, elasticsearch 등을 활용합니다.
-6. MessageIndexer
+7. MessageIndexer
   - 메시지를 검색하는 컴포넌트입니다.
   - elasticsearch, meilisearch, postgres 등을 활용합니다
