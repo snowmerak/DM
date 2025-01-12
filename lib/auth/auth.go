@@ -14,7 +14,14 @@ type Verifier interface {
 	Verify(key crypto.PublicKey, signature []byte, payload []byte) error
 }
 
+type KeyType string
+
+const (
+	KeyTypePrivate KeyType = "private"
+	KeyTypePublic  KeyType = "public"
+)
+
 type KeyStore interface {
-	Set(ctx context.Context, keyId string, key []byte, expiredAt time.Time) error
-	Get(ctx context.Context, keyId string) ([]byte, error)
+	Set(ctx context.Context, keyId string, keyType KeyType, algorithm string, key []byte, expiredAt time.Time) error
+	Get(ctx context.Context, keyId string, keyType KeyType) (algorithm string, key []byte, err error)
 }
