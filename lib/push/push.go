@@ -1,11 +1,16 @@
 package push
 
-import "context"
+import (
+	"context"
+	"errors"
+)
 
 type Push interface {
 	ToDevice(ctx context.Context, message any, target ...string) error
 	ToGroup(ctx context.Context, message any, group ...string) error
 }
+
+var InvalidTokenErr = errors.New("invalid token")
 
 type Checker interface {
 	Commit(ctx context.Context, messageId string) error
