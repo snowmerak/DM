@@ -1,6 +1,7 @@
 # Direct Message Server
 
-이 프로젝트는 고 언어로 작성된 간단한 DM 서비스 구현입니다.  
+이 프로젝트는 고 언어로 작성된 간단한 DM 서비스 Stub입니다.  
+자세한 구현을 작성할 지는 잘 모르겠습니다.
 
 ## Components
 
